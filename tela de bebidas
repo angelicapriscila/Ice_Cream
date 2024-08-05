@@ -1,0 +1,221 @@
+import 'package:flutter/material.dart';
+//import 'package:google_fonts/google_fonts.dart';
+
+class Ice_Cream extends StatefulWidget {
+  const Ice_Cream({super.key});
+
+  @override
+  State<Ice_Cream> createState() => _Ice_CreamState();
+}
+
+class _Ice_CreamState extends State<Ice_Cream> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
+      body: Column(
+        children: [
+          //Text('procure aqui'),
+
+          Row(
+            children: [
+              Image.network(
+                  'https://cdn-icons-png.flaticon.com/512/9230/9230519.png',
+                  height: 25),
+              Icon(Icons.search, size: 25),
+              SizedBox(width: 15),
+              Text('procure aqui'),
+              SizedBox(width: 15),
+              const SizedBox(width: 5),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.network(
+                  'https://png.pngtree.com/png-clipart/20231018/original/pngtree-3-cup-milkshake-png-image_13354288.png',
+                  height: 150),
+              Text(
+                'PROMOÇÃO IMPERDÍVEL',
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff000000),
+                ),
+              ),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text(
+                  'todos',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Color(0xff000000),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text(
+                  'bebidas',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Color(0xFFAECAE0),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const SizedBox(width: 15),
+              Image.network(
+                  'https://static.vecteezy.com/system/resources/previews/029/107/695/non_2x/chocolate-milkshake-with-toppings-on-a-transparent-background-ai-generative-free-png.png',
+                  height: 100),
+              Image.network(
+                  'https://static.vecteezy.com/system/resources/thumbnails/025/140/281/small_2x/chocolate-milkshake-on-plastic-cup-transparent-background-ai-generated-free-png.png',
+                  height: 100),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const SizedBox(width: 9),
+              Text('milkshake de morango'),
+              Text('milkshake de chocolate '),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                'R\$ 5.00',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff000000),
+                ),
+              ),
+              Text(
+                'R\$ 5.00',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff000000),
+                ),
+              ),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const SizedBox(width: 9),
+              Image.network(
+                  'https://e7.pngegg.com/pngimages/404/613/png-clipart-water-bottles-bottle-sticker-plastic-bottle.png',
+                  height: 100),
+              Image.network(
+                  'https://png.pngtree.com/png-vector/20240622/ourmid/pngtree-vanilla-milkshake-transparent-background-png-image_12826028.png',
+                  height: 100),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text('garrafa de água mineral'),
+              Text('milkshake de baunilha'),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                'R\$ 6.00',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff000000),
+                ),
+              ),
+              Text(
+                'R\$ 5.00',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff000000),
+                ),
+              ),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const SizedBox(width: 9),
+              Image.network(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8ao2c2_5JF1gBVQiIEnPkdXh5mzToUOiG9Q&s',
+                  height: 100),
+              Image.network(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHC-TeywQblYa9qlJ3v06VvoJEU0ZOi4QzZw&s',
+                  height: 100),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const SizedBox(width: 9),
+              Text('milkshake de oreo'),
+              Text('milkshake de paçoca '),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                'R\$ 5.00',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff000000),
+                ),
+              ),
+              Text(
+                'R\$ 5.00',
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff000000),
+                ),
+              ),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.network(
+                  'https://png.pngtree.com/png-clipart/20230818/original/pngtree-filter-search-option-icon-picture-image_8035282.png',
+                  height: 20),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
