@@ -1,0 +1,171 @@
+import 'package:flutter/material.dart';
+
+
+class Ice_Cream extends StatefulWidget {
+ const Ice_Cream({super.key});
+
+
+ @override
+ State<Ice_Cream> createState() => _Ice_CreamState();
+}
+
+
+class _Ice_CreamState extends State<Ice_Cream> {
+ @override
+ Widget build(BuildContext context) {
+   return Scaffold(
+//cria um layout “padrão”
+     backgroundColor: Color(0xFFfefefc),
+     appBar: AppBar(
+       backgroundColor: const Color(0xFFAECAE0),
+       title: const Text(
+         'Pesquisar',
+         style: TextStyle(color: Colors.white),
+       ),
+     ),
+     body: Column(
+       children: [
+         SizedBox(height: 20),
+         Container(
+           width: 350,
+           height: 100,
+           decoration: BoxDecoration(
+             color: Color(0xFFAECAE0),
+             borderRadius: BorderRadius.circular(15),
+           ),
+           child: Column(
+             children: [
+               Text(
+                 'Entrega Grátis '
+                 'Agora!',
+                 style: TextStyle(
+                   fontSize: 25,
+                   color: Colors.white,
+                 ),
+               ),
+             ],
+           ),
+         ),
+         SizedBox(height: 20),
+         Row(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+             const SizedBox(height: 20),
+             ElevatedButton(
+               onPressed: () {},
+               child: const Text(
+                 'Todos',
+                 style: TextStyle(
+                   fontSize: 18,
+                   color: Color(0xFFAECAE0),
+                   fontWeight: FontWeight.bold,
+                 ),
+               ),
+               style: ElevatedButton.styleFrom(
+                 backgroundColor: Colors.black,
+               ),
+             ),
+             const SizedBox(width: 16),
+             ElevatedButton(
+               onPressed: () {},
+               child: const Text(
+                 'Bebidas',
+                 style: TextStyle(
+                   fontSize: 18,
+                   color: Color(0xFFAECAE0),
+                   fontWeight: FontWeight.bold,
+                 ),
+               ),
+               style: ElevatedButton.styleFrom(
+                 backgroundColor: Colors.black,
+               ),
+             ),
+           ],
+         ),
+         SizedBox(height: 50),
+         Row(
+             mainAxisAlignment: MainAxisAlignment.center,
+             crossAxisAlignment: CrossAxisAlignment.center,
+             //alignment: Alignment.center,
+             children: [
+               Image.network(
+                 'https://static.itdg.com.br/images/1200-675/5c6616780523cd256acb5b9c06bcbece/293233-original.jpg',
+                 height: 100,
+               ),
+               SizedBox(width: 16),
+               Image.network(
+                 'https://www.sabornamesa.com.br/media/k2/items/cache/a05812a6ea54f32db80b865f7cd66f25_XL.jpg',
+                 height: 100,
+               ),
+             ]),
+         SizedBox(height: 5),
+         Row(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+             Text('Picolé'),
+             SizedBox(width: 130),
+             Text('Casquinha'),
+           ],
+         ),
+         Row(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+             Text('8 RS',
+                 style: TextStyle(
+                   fontWeight: FontWeight.bold,
+                   color: Colors.black,
+                 )),
+             SizedBox(width: 130),
+             Text(
+               '5 RS',
+               style: TextStyle(
+                 fontWeight: FontWeight.bold,
+                 color: Colors.black,
+               ),
+             ),
+           ],
+         ),
+         SizedBox(height: 70),
+         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+           Image.network(
+             'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/c3/50/be/cream-e-cakes.jpg?w=600&h=-1&s=1',
+             height: 120,
+           ),
+           SizedBox(width: 16),
+           Image.network(
+             'https://i.pinimg.com/236x/0e/61/27/0e612794330052b84277249cd9b8a934.jpg',
+             height: 120,
+           ),
+         ]),
+         SizedBox(height: 5),
+         Row(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+             Text('Sorvete em rolo'),
+             SizedBox(width: 80),
+             Text('Sorvete em bola'),
+           ],
+         ),
+         Row(
+           mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+             Text('16 RS',
+                 style: TextStyle(
+                   fontWeight: FontWeight.bold,
+                   color: Colors.black,
+                 )),
+             SizedBox(width: 130),
+             Text(
+               '12 RS',
+               style: TextStyle(
+                 fontWeight: FontWeight.bold,
+                 color: Colors.black,
+               ),
+             ),
+           ],
+         ),
+       ],
+     ),
+   );
+ }
+}
