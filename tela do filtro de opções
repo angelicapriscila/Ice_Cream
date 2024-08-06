@@ -1,4 +1,60 @@
-height: 50,
+import 'package:flutter/material.dart';
+//import 'package:google_fonts/google_fonts.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            child: SizedBox(
+              width: 200,
+              height: 50,
+              child: TextField(
+                style: TextStyle(backgroundColor: Color(0xfff2eff1)),
+                decoration: InputDecoration(
+                  labelText: 'Procure aqui',
+                  suffixIcon: Icon(Icons.search),
+                  labelStyle: TextStyle(
+                    fontSize: 14,
+                    color: Colors.black,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black, width: 2.0),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                children: [
+                  //Text('procure aqui')
+                  Image.network(
+                      'https://img1.wsimg.com/isteam/ip/d20828e2-e261-46c1-a1ef-364a89718dda/Red%20and%20Grey%20Minimalist%20Delivery%20App%20Mobile%20P.jpeg/:/cr=t:0%25,l:1.69%25,w:96.62%25,h:100%25/rs=w:365,h:183,cg:true',
+                      width: 350),
+
+                  Container(
+                    width: 300,
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 50,
+                          decoration:
+                        Container(
+                          height: 50,
                           decoration:
                               BoxDecoration(border: Border.all(width: 1)),
                           child: Row(
