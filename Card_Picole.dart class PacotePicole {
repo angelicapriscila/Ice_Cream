@@ -1,0 +1,10 @@
+class PacotePicole {
+String urlimage;
+String titulo;
+int valor;
+PacotePicole({
+required this.urlimage,
+required this.titulo,
+required this.valor,
+});
+}
