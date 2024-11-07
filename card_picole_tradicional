@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+import 'package:icecream/domain/DadosIceCream.dart';
+import 'package:icecream/pages/detail_page.dart';
+
+
+class CardPicoleTradicional extends StatefulWidget {
+  final PacoteTradicional pacoteTradicional;
+
+
+  const CardPicoleTradicional({
+    super.key,
+    required this.pacoteTradicional,
+  });
+
+
+  @override
+  State<CardPicoleTradicional> createState() => _CardPicoleTradicionalState();
+}
+
+
+class _CardPicoleTradicionalState extends State<CardPicoleTradicional> {
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+        child: Card(
+          color: Colors.white,
+          margin: const EdgeInsets.all(16),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Image.network(widget.pacoteTradicional.URLImage),
+            Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        widget.pacoteTradicional.titulo,
+                        style: const TextStyle(
+                          fontSize: 21,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ])),
+          ]),
+        ),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return DetailPage(
+                  pacoteTradicional: widget.pacoteTradicional,
+                );
+              },
+            ),
+          );
+        });
+  }
+}
