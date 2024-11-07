@@ -1,0 +1,13 @@
+class PacoteTradicional {
+  String URLImage;
+  String titulo;
+  int valor;
+
+
+  PacoteTradicional({
+    required this.URLImage,
+    required this.titulo,
+    required this.valor,
+  });
+}
+
