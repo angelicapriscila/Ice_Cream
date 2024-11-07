@@ -1,0 +1,96 @@
+import 'package:icecream/domain/DadosIceCream.dart';
+import 'package:flutter/material.dart';
+import 'package:icecream/pages/home_IceCream.dart';
+
+
+class DetailPage extends StatefulWidget {
+  final PacoteTradicional pacoteTradicional;
+
+
+  const DetailPage({
+    super.key,
+    required this.pacoteTradicional,
+  });
+
+
+  @override
+  State<DetailPage> createState() => _DetailPageState();
+}
+
+
+class _DetailPageState extends State<DetailPage> {
+  PacoteTradicional get pacote => widget.pacoteTradicional;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: ListView(
+      children: [
+        Stack(
+          children: [
+            Image.network(
+              pacote.URLImage,
+              height: 250,
+              width: 360,
+            ),
+            Positioned(
+              child: IconButton(
+                icon: Icon(Icons.arrow_back, size: 25, color: Colors.white),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+              left: 8,
+              top: 16,
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            //SizedBox(height: 50),
+            Text(pacote.titulo,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontSize: 20,
+                )),
+          ],
+        ),
+        Row(
+          children: [
+            Text(
+              '12,00',
+            )
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            SizedBox(height: 300),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(
+                  builder: (context) {
+                    return home_IceCream();
+                  },
+                ));
+              },
+              child: const Text(
+                'Próximo',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Color(0xfffbfdfe),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xff585757),
+              ),
+            ),
+          ],
+        )
+      ],
+    ));
+  }
+}
