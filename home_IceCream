@@ -1,0 +1,109 @@
+import 'package:flutter/material.dart';
+import 'package:icecream/db/database.dart';
+//import 'package:icecream/pages/detail_IceCream.dart';
+import 'package:icecream/widget/card_picole_tradicional.dart';
+
+
+class home_IceCream extends StatefulWidget {
+  const home_IceCream({super.key});
+
+
+  @override
+  State<home_IceCream> createState() => _home_IceCreamState();
+}
+
+
+class _home_IceCreamState extends State<home_IceCream> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFFfefefc),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFAECAE0),
+        title: const Text(
+          'Procure aqui',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+      body: ListView(
+        children: [
+          buildContainerpainel(),
+          GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 0.8,
+            ),
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: Database.pacotes.length,
+            itemBuilder: (context, i) {
+              return CardPicoleTradicional(
+                pacoteTradicional: Database.pacotes[i],
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+
+  buildContainerpainel() {
+    return Container(
+      width: 350,
+      height: 100,
+      decoration: BoxDecoration(
+        color: Color(0xFFAECAE0),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Column(
+        children: [
+          Text(
+            'Entrega Grátis '
+            'Agora!',
+            style: TextStyle(
+              fontSize: 25,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
+    SizedBox(height: 20);
+    Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {},
+          child: const Text(
+            'Todos',
+            style: TextStyle(
+              fontSize: 18,
+              color: Color(0xFFAECAE0),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black,
+          ),
+        ),
+        const SizedBox(width: 16),
+        ElevatedButton(
+          onPressed: () {},
+          child: const Text(
+            'Bebidas',
+            style: TextStyle(
+              fontSize: 18,
+              color: Color(0xFFAECAE0),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black,
+          ),
+        ),
+      ],
+    );
+  }
+}
