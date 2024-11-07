@@ -1,0 +1,31 @@
+import 'package:icecream/domain/DadosIceCream.dart';
+
+
+class Database {
+  static List pacotes = [
+    PacoteTradicional(
+      URLImage:
+          'https://static.itdg.com.br/images/1200-675/5c6616780523cd256acb5b9c06bcbece/293233-original.jpg',
+      titulo: 'Picolé de chocolate',
+      valor: 8,
+    ),
+    PacoteTradicional(
+      URLImage:
+          'https://www.sabornamesa.com.br/media/k2/items/cache/a05812a6ea54f32db80b865f7cd66f25_XL.jpg',
+      titulo: 'Casquinha',
+      valor: 8,
+    ),
+    PacoteTradicional(
+      URLImage:
+          'https://vivariomarrecife.com.br/wp-content/uploads/2023/07/ice-cream-roll-.jpg',
+      titulo: 'Sorvete em rolo',
+      valor: 8,
+    ),
+    PacoteTradicional(
+      URLImage:
+          'https://paviloche.com.br/wp-content/uploads/2021/12/bolas-de-sorvete.jpg',
+      titulo: 'Sorvete em bolas',
+      valor: 8,
+    ),
+  ];
+}
