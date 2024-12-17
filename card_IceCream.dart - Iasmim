@@ -1,0 +1,26 @@
+class PacoteIce {
+late String id;
+late String nome;
+late String urlimage;
+late String cnpj;
+PacoteIce({
+required this.id,
+required this.nome,
+required this.urlimage,
+required this.cnpj,
+});
+PacoteIce.fromJson(Map<String, dynamic> json) {
+id = json['id'];
+nome = json['nome'];
+cnpj = json['cnpj'];
+urlimage = json['urlimage'];
+}
+Map<String, dynamic> toJson() {
+Map<String, dynamic> json = {};
+json['id'] = id;
+json['nome'] = nome;
+json['urlimage'] = urlimage;
+json['cnpj'] = cnpj;
+return json;
+}
+}
