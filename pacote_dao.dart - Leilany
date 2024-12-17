@@ -1,0 +1,21 @@
+import 'package:icecream/db/db_helper.dart';
+import 'package:icecream/domain/DadosIceCream.dart';
+import 'package:icecream/domain/DadosIceCream.dart';
+import 'package:sqflite/sqflite.dart';
+class PacoteDao {
+salvarPacote(PacoteTradicional pacote) async {
+Database database = await DBHelper().initDB();
+database.insert('PACOTE', pacote.toJson());
+}
+listarPacotes() async {
+Database database = await DBHelper().initDB();
+String sql = 'SELECT * FROM PACOTE;';
+var result = await database.rawQuery(sql);
+List<PacoteTradicional> lista = [];
+for (var json in result) {
+PacoteTradicional pacote = PacoteTradicional.fromJson(json);
+lista.add(pacote);
+}
+return lista;
+}
+}
