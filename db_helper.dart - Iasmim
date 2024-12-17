@@ -1,0 +1,26 @@
+import 'dart:async';
+import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
+class DBHelper {
+Future<Database> initDB() async {
+String path = await getDatabasesPath();
+String dbPath = join(path, 'pacote.db');
+Database db = await openDatabase(
+dbPath,
+version: 1,
+onCreate: onCreate,
+);
+return db;
+}
+FutureOr<void> onCreate(Database db, int version) async {
+String sql =
+'CREATE TABLE PACOTE (id INTEGER PRIMARY KEY, nome
+varchar(100), urlimage varchar(100), cnpj varchar(14));';
+await db.execute(sql);
+sql = "INSERT INTO PACOTE (id, nome, urlimage, cnpj) VALUES (1,
+Assai,
+https://www.abf.com.br/wp-content/uploads/2023/02/700x400.png,
+12345678901234);";
+await db.execute(sql);
+}
+}
