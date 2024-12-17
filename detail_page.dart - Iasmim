@@ -1,0 +1,71 @@
+import 'package:flutter/material.dart';
+import 'package:helloworld/domain/card_IceCream.dart';
+class DetailPage extends StatefulWidget {
+final PacoteIce pacoteIce;
+const DetailPage({super.key, required this.pacoteIce});
+@override
+State<DetailPage> createState() => _DetailPageState();
+}
+class _DetailPageState extends State<DetailPage> {
+PacoteIce get pacote => widget.pacoteIce;
+@override
+Widget build(BuildContext context) {
+return Scaffold(
+body: Column(
+children: [
+Image.network(
+// widget.pacoteTuristico.urlImage,
+pacote.urlimage),
+Padding(
+padding: const EdgeInsets.all(16),
+child: Column(
+crossAxisAlignment: CrossAxisAlignment.start,
+children: [
+Row(
+children: [
+Text(
+pacote.id,
+style: TextStyle(
+fontSize: 20,
+fontWeight: FontWeight.bold,
+),
+),
+]
+),
+Text(
+pacote.nome,
+style: TextStyle(
+fontSize: 20,
+fontWeight: FontWeight.bold,
+),
+),
+  const SizedBox(height: 8),
+Row(
+children: [
+Text(
+pacote.cnpj,
+style: TextStyle(
+fontSize: 20,
+fontWeight: FontWeight.bold,
+),
+),
+]
+),
+const SizedBox(height: 16),
+const Divider(),
+],
+),
+)
+],
+),
+);
+}
+buildText(String text) {
+return Text(
+text,
+style: TextStyle(
+fontSize: 14,
+),
+);
+}
+}
