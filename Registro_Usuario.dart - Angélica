@@ -1,0 +1,151 @@
+import 'package:flutter/material.dart';
+import 'package:login/Ice_Cream.dart';
+import 'package:login/user_dao.dart';
+import 'package:login/user.dart';
+import 'package:login/Login.dart';
+//import 'package:google_fonts/google_fonts.dart';
+
+class Registro_Usuario extends StatefulWidget {
+  const Registro_Usuario({super.key});
+
+  @override
+  State<Registro_Usuario> createState() => Login();
+}
+
+class Login extends State<Registro_Usuario> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController senhaController = TextEditingController();
+
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0Xffaecae0),
+        body: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Form(
+            key: formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(height: 16),
+                Text(
+                  'Cadastrar',
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 16),
+                Image.network(
+                    'https://cdn-icons-png.flaticon.com/512/8783/8783547.png',
+                    height: 120),
+                SizedBox(height: 32),
+                Text('Email'),
+                TextFormField(
+                  controller: emailController,
+                  validator: (value) {
+                    if (value!.contains("@")) {
+                      return null;
+                    } else {
+                      return "Você precisa digitar um e-mail válido!";
+                    }
+                  },
+
+                  //  ),
+
+                  decoration: InputDecoration(
+                    label: Text("E-mail"),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: Color(0xfffdfdfd),
+                        width: 2,
+                      ),
+                    ),
+                  ),
+                ),
+                Text('Senha'),
+                TextFormField(
+                  obscureText: true,
+                  controller: senhaController,
+                  validator: (value) {
+                    if (value!.length >= 6) {
+                      return null;
+                    } else {
+                      return "Você precisa digitar uma senha válida!";
+                    }
+                  },
+                  decoration: InputDecoration(
+                    label: Text("Senha"),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                        color: Color(0xfffdfdfd),
+                        width: 2,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 32),
+                ElevatedButton(
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      // Verificar e-mail e senha
+                      String email = emailController.text;
+                      String senha = senhaController.text;
+
+                      if (email == 'usuario@gmail.com' && senha == '123456') {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return Ice_Cream();
+                            },
+                          ),
+                        );
+                      } else {
+                        print('Usuário e/ou Senha incorreto(s)!');
+                      }
+                    }
+                  },
+                  child: Text(
+                    'Entrar',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xfffdfdfd),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      )),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> onPressed() async {
+    // Validar o Form
+    if (formKey.currentState!.validate()) {
+      // Verificar e-mail e senha
+      String email = emailController.text;
+      String senha = senhaController.text;
+
+      User user = User(email, senha);
+      await UserDao().saveUser(user);
+      Navigator.pop(context);
+    }
+  }
+}
