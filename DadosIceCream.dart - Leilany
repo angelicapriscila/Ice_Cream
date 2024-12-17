@@ -1,0 +1,30 @@
+class PacoteTradicional {
+late int id;
+late String URLImage;
+late String titulo;
+late int valor;
+late String descricao;
+PacoteTradicional({
+required this.id,
+required this.URLImage,
+required this.titulo,
+required this.valor,
+required this.descricao,
+});
+PacoteTradicional.fromJson(Map<String, dynamic> json) {
+id = json['id'];
+titulo = json['titulo'];
+valor = json['Valor'];
+descricao = json['descricao'];
+URLImage = json['URLImage'];
+}
+Map<String, dynamic> toJson() {
+Map<String, dynamic> json = {};
+json['titulo'] = titulo;
+json['URLImage'] = URLImage;
+json['descricao'] = descricao;
+json['Valor'] = valor;
+json['id'] = id;
+return json;
+}
+}
